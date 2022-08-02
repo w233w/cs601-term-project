@@ -1,4 +1,7 @@
 <template>
+	<header>
+		<Menubar />
+	</header>
 	<main>
 		<h1>Hangzhou</h1>
 		<table class="info-table">
@@ -48,7 +51,12 @@
 </template>
 
 <script>
+import Menubar from './Menubar.vue'
+
 export default {
-	name: 'HometownVue'
+	name: 'HometownVue',
+	components: {
+		'Menubar': Menubar
+	}
 }
 </script>

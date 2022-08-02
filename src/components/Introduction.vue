@@ -1,4 +1,7 @@
 <template>
+    <header>
+        <Menubar />
+    </header>
     <main>
         <h1>Introduce Myself</h1>
         <p>
@@ -45,8 +48,13 @@
 </template>
 
 <script>
+import Menubar from './Menubar.vue'
+
 export default {
     name: 'IntroductionVue',
+    components: {
+        'Menubar': Menubar
+    }
 }
 </script>
 

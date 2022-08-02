@@ -1,15 +1,10 @@
 <template>
-  <header>
-    <Menubar />
-  </header>
-  <Introduction />
-  <Hometown />
+	<div>
+		<router-view></router-view>
+	</div>
 </template>
 
 <script setup>
-import Menubar from './components/Menubar'
-import Introduction from './components/Introduction.vue';
-import Hometown from './components/Hometown.vue';
 </script>
 
 <style>
@@ -19,36 +14,37 @@ import Hometown from './components/Hometown.vue';
 		height: 42px;
 		width: 100%;
 	}
-	
+
 	.nav-header {
 		display: none;
 	}
-	
+
 	/*Since only 3 pages, each label take 1/3 of width.*/
-	.nav-ul li{
+	.nav-ul li {
 		float: left;
 		width: 33.33%;
-    }
-	
-	.nav-ul a{
-		padding:12px 12px;
+	}
+
+	.nav-ul a {
+		padding: 12px 12px;
 	}
 
 	/*Avoid conflict with menu*/
 	main {
 		padding-top: 32px;
 	}
-	
-	main, footer {
+
+	main,
+	footer {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	
+
 	/*Center h1 and table when screen small*/
 	h1 {
 		text-align: center;
 	}
-	
+
 	.info-table {
 		margin-left: auto;
 		margin-right: auto;
@@ -57,33 +53,35 @@ import Hometown from './components/Hometown.vue';
 
 /*Tablet Size*/
 @media only screen and (min-width: 601px) and (max-width: 1000px) {
+
 	/*Menu gose to top when screen become smaller*/
 	header {
 		height: 42px;
 		width: 100%;
 	}
-	
+
 	.nav-header {
 		float: left;
 		margin: 4px 16px;
 		text-align: center;
 		font-family: "Arial Black", Helvetica, sans-serif;
 	}
-	
-	.nav-ul li{
+
+	.nav-ul li {
 		float: left;
-    }
-	
-	.nav-ul a{
-		padding:12px 12px;
+	}
+
+	.nav-ul a {
+		padding: 12px 12px;
 	}
 
 	/*Avoid conflict with menu*/
 	main {
 		padding-top: 32px;
 	}
-	
-	main, footer {
+
+	main,
+	footer {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
@@ -91,35 +89,37 @@ import Hometown from './components/Hometown.vue';
 
 /*PC Screen Size*/
 @media only screen and (min-width: 1001px) {
+
 	/*Vertical menu when using large screen*/
 	header {
 		height: 100%;
 		width: 150px;
 	}
-	
+
 	.nav-header {
 		text-align: center;
 		font-family: "Arial Black", Helvetica, sans-serif;
 	}
-	
-	.nav-ul a{
-		padding:16px 12px;
+
+	.nav-ul a {
+		padding: 16px 12px;
 	}
 
 	/*Avoid conflict with menu*/
-	main, footer {
+	main,
+	footer {
 		padding-left: 160px;
 		padding-right: 20px;
 	}
 }
 
 body {
-    background-color:#F5F5DC;
+	background-color: #F5F5DC;
 }
 
 /*Overall menu style*/
 header {
-	background-color:#E0E094;
+	background-color: #E0E094;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -145,54 +145,56 @@ figure.in-text {
 }
 
 figure.in-text img {
-	width: 100%; 
-	height:100%;
+	width: 100%;
+	height: 100%;
 }
 
 .info-table {
-	border:1px solid black;
+	border: 1px solid black;
+	background-image: url("./assets/table_background.jpg");
 }
 
-.info-table th, td {
-	border:1px solid black;
+.info-table th,
+td {
+	border: 1px solid black;
 	padding: 3px 15px;
 }
-	
+
 .nav-ul {
-	list-style-type:none;
-	margin:0;
-	padding:0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 	background-color: #E0E094;
 }
 
-.nav-ul li{
-    text-align: center;
+.nav-ul li {
+	text-align: center;
 }
 
-.nav-ul a{
-	color:#000000;
-	text-decoration:none;
-	display:block;
+.nav-ul a {
+	color: #000000;
+	text-decoration: none;
+	display: block;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 }
 
 .nav-ul a:hover {
 	background-color: #EFEF94;
-	color:#CC33CC;
+	color: #CC33CC;
 }
 
 .extra-links {
-	padding-left:20px;
-	margin-top:-10px;
+	padding-left: 20px;
+	margin-top: -10px;
 }
 
-.extra-links a{
-	text-decoration:none;
+.extra-links a {
+	text-decoration: none;
 }
 
 #intro-video {
-	margin-left:20px;
-	margin-top:-20px;
+	margin-left: 20px;
+	margin-top: -20px;
 }
 </style>

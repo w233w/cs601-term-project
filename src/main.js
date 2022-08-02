@@ -1,8 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { RouterLink, RouterView } from 'vue-router'
+import routers from './index'
 
 const app = createApp(App)
-app.use(RouterLink)
-app.use(RouterView)
+app.use(routers)
 app.mount("#app")
