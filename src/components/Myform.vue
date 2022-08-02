@@ -1,18 +1,17 @@
 <template>
     <form method="POST" action="https://bucs601.com/submit.php" name="form">
-
-
-
-        <label class="question">Age?</label><br>
-        <input type="radio" id="teen" name="age" value="teen">
-        <label for="op1">&lt; 18</label>
-        <input type="radio" id="young" name="age" value="young">
-        <label for="op2">18 to 24</label>
-        <input type="radio" id="adult" name="age" value="adult">
-        <label for="op3">24 to 36</label>
-        <input type="radio" id="not-young" name="age" value="not-young">
-        <label for="op3">&gt; 36</label><br>
-        <div id="ratioError"></div>
+        <label class="question">Rate my page</label><br>
+        <input type="radio" id="1" name="rate" value="1" v-model="rating">
+        <label for="1">1</label>
+        <input type="radio" id="2" name="rate" value="2" v-model="rating">
+        <label for="2">2</label>
+        <input type="radio" id="3" name="rate" value="3" v-model="rating" checked>
+        <label for="3">3</label>
+        <input type="radio" id="4" name="rate" value="4" v-model="rating">
+        <label for="4">4</label>
+        <input type="radio" id="5" name="rate" value="5" v-model="rating">
+        <label for="5">5</label><br>
+        <div id="error"></div>
 
         <label class="question">Any hobby?</label><br>
         <input type="checkbox" id="movie" name="hobby" value="movie">
@@ -23,29 +22,31 @@
         <label for="ck3">Sport</label><br>
 
         <label class="question">Let me know your idea.</label><br>
-        <textarea placeholder="Enter your idea..." rows="4" cols="20"></textarea><br>
+        <textarea placeholder="Enter your idea..." rows="4" cols="24"></textarea><br>
 
         <label class="question">Want to talk more?</label><br>
         <input type="radio" id="Yes" value="Yes" name="askMore" v-model="picked">
         <label for="Yes">Yes</label>
         <input type="radio" id="No" value="No" name="askMore" v-model="picked">
         <label for="No">No</label><br>
-        <div id="askForMore" :style="{ display: contectDisplay }">
+
+        <div id="hidePart" :style="{ display: contectDisplay }">
 
             <label for="firstName" class="question">First Name:</label><br>
             <input type="text" id="firstName" name="firstName"><br>
 
             <label for="lastName" class="question">Last Name:</label><br>
             <input type="text" id="lastName" name="lastName"><br>
-            <div id="nameError"></div>
+            <div id="error"></div>
 
             <label for="email" class="question">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <div id="emailError"></div>
+            <input type="text" id="email" name="email" v-model="emailInput"><br>
+            <div id="error">{{ emailError }}</div>
+
         </div>
 
         <input type="submit" value="Submit" onClick="return validation()">
-        <input type="reset" value="Reset" onClick="return validation()">
+        <input type="reset" value="Reset">
     </form>
 </template>
 
@@ -58,10 +59,12 @@ export default {
             algphbetError: "Name must contain only algphbet",
             facilitatoError: "It is not the first name of our facilitator, please enter again.",
             ratioError: "You have to select your age.",
+            emailError: "",
             name: '',
-            email: '',
+            emailInput: '',
             picked: 'askMore',
-            emailDisplay: 'none'
+            contectDisplay: 'none',
+            rating: ''
         }
     },
     watch: {
@@ -72,6 +75,10 @@ export default {
             if (newPick == "No") {
                 this.contectDisplay = 'none';
             }
+        },
+
+        emailInput(input) {
+            this.validateEmail(input);
         }
     },
     methods: {
@@ -82,7 +89,16 @@ export default {
         formErrorHandle(errorId, message) {
             document.getElementById(errorId).style.color = "red";
             document.getElementById(errorId).innerHTML = message;
-            event.preventDefault();
+            this.preventDefault();
+        },
+
+        validateEmail(email) {
+            if (email.indexOf('@') > -1) {
+                this.emailError = "";
+            }
+            else {
+                this.emailError = "Invalid email address.";
+            }
         },
 
         //validation a
@@ -153,7 +169,8 @@ export default {
 </script>
 
 <style>
-input, textarea {
+input,
+textarea {
     outline-style: none;
     border: 1px solid #CCC;
     border-radius: 3px;
@@ -166,7 +183,7 @@ form {
     border-radius: 8px;
     box-shadow: 0 4px 20px lightgray;
     text-align: center;
-    background-color: #FFF
+    background-color: rgb(231, 216, 119)
 }
 
 .question {
@@ -174,7 +191,8 @@ form {
     margin-top: 60px;
 }
 
-#askForMore {
-    display: none;
+#error {
+    color: red;
+    font-size: 12px;
 }
 </style>
