@@ -1,12 +1,15 @@
 <template>
   <header>
-    <Menubar></Menubar>
+    <Menubar />
   </header>
+  <Introduction />
+  <Hometown />
 </template>
 
 <script setup>
 import Menubar from './components/Menubar'
-
+import Introduction from './components/Introduction.vue';
+import Hometown from './components/Hometown.vue';
 </script>
 
 <style>
