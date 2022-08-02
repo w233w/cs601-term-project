@@ -1,5 +1,5 @@
 <template>
-<main>
+	<main>
 		<h1>Hangzhou</h1>
 		<table class="info-table">
 			<tr>
@@ -20,19 +20,21 @@
 			</tr>
 		</table>
 		<p>
-			&emsp;Hangzhou is the provincial capital of Zhejiang Province. 
-			Zhejiang is located at the east of China and close to the East China Sea, the monsoon climate is humid and rainy.
+			&emsp;Hangzhou is the provincial capital of Zhejiang Province.
+			Zhejiang is located at the east of China and close to the East China Sea, the monsoon climate is humid and
+			rainy.
 			So as Hangzhou, the weather become hot and rainy in summer, and little rain in winter.
 		</p>
 		<p>
 			&emsp;The most interesting thing about Hangzhou is that the city is built on the edge of a huge lake.
-			You can see how big this lake is from the satellite image. 
+			You can see how big this lake is from the satellite image.
 		</p>
 		<p>
-			&emsp;The lower right corner of the satellite image is the Qiantang River running through Zhejiang which is also a giant body of water.
+			&emsp;The lower right corner of the satellite image is the Qiantang River running through Zhejiang which is
+			also a giant body of water.
 		</p>
 		<figure class="in-text">
-			<img src="image/hangzhou.png" alt="hangzhou">
+			<img src="../assets/hangzhou.png" alt="hangzhou">
 		</figure>
 	</main>
 	<footer>
@@ -46,7 +48,7 @@
 </template>
 
 <script>
-    export default  {
-        name: 'HometownVue'
-    }
+export default {
+	name: 'HometownVue'
+}
 </script>

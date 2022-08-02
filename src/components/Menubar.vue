@@ -5,8 +5,10 @@
 			<li><a href="./Introduction.html">Introduction</a></li>
 			<li><a href="./Hometown.html">Hometown</a></li>
 			<li><a href="./Gaming.html">Game life</a></li>
+            <li><router-link to="{path: 'Introduction' }">GG</router-link></li>
 		</ul>
 	</nav>
+    <router-view></router-view>
 </template>
 
 <script>
