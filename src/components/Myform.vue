@@ -8,9 +8,16 @@
         <input type="text" id="lastName" name="lastName"><br>
         <div id="nameError2"></div>
 
-        <label for="facilitator" class="question">Facilitator:</label><br>
-        <input type="text" id="facilitator" name="facilitator"><br>
-        <div id="facilitatorError"></div>
+        <label class="question">Want to share your email so I can connect you??</label><br>
+        <input type="radio" id="Yes" value="Yes" name="askEmail" v-model="picked">
+        <label for="askEmailyes">Yes</label>
+        <input type="radio" id="No" value="No" name="askEmail" v-model="picked">
+        <label for="askEmailno">No</label><br>
+        <div id="emailInput" style="{ display: none }">
+            <label for="email" class="question">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <div id="emailError2"></div>
+        </div>
 
         <label class="question">Age?</label><br>
         <input type="radio" id="teen" name="age" value="teen">
@@ -46,7 +53,8 @@ export default {
             facilitatoError: "It is not the first name of our facilitator, please enter again.",
             ratioError: "You have to select your age.",
             name: '',
-            email: ''
+            email: '',
+            picked: 'askEmail'
         }
     },
     methods: {
@@ -55,77 +63,75 @@ export default {
             this.email = "";
         },
 
-        validation() {
+        formErrorHandle(errorId, message) {
+            document.getElementById(errorId).style.color = "red";
+            document.getElementById(errorId).innerHTML = message;
+            event.preventDefault();
+        },
 
-            function formErrorHandle(errorId, message) {
-                document.getElementById(errorId).style.color = "red";
-                document.getElementById(errorId).innerHTML = message;
-                event.preventDefault();
+        //validation a
+        validateName() {
+            let fName = document.form.firstName.value;
+            let lName = document.form.lastName.value;
+
+            function onlyAlpgbet(input) {
+                return /^[a-zA-Z]+$/.test(input);
             }
 
-            //validation a
-            function validateName() {
-                let fName = document.form.firstName.value;
-                let lName = document.form.lastName.value;
-
-                function onlyAlpgbet(input) {
-                    return /^[a-zA-Z]+$/.test(input);
-                }
-
-                //firstName error
-                if (fName.length < 2) {
-                    formErrorHandle("nameError1", this.lengthError);
-                }
-                else if (!onlyAlpgbet(fName)) {
-                    formErrorHandle("nameError1", this.algphbetError);
-                }
-                else {
-                    document.getElementById("nameError1").innerHTML = "";
-                }
-
-                //lastName error
-                if (lName.length < 2) {
-                    formErrorHandle("nameError2", this.lengthError);
-                }
-                else if (!onlyAlpgbet(lName)) {
-                    formErrorHandle("nameError2", this.algphbetError);
-                }
-                else {
-                    document.getElementById("nameError2").innerHTML = "";
-                }
+            //firstName error
+            if (fName.length < 2) {
+                this.formErrorHandle("nameError1", this.lengthError);
+            }
+            else if (!onlyAlpgbet(fName)) {
+                this.formErrorHandle("nameError1", this.algphbetError);
+            }
+            else {
+                document.getElementById("nameError1").innerHTML = "";
             }
 
-            //validation b
-            function validateFacilitator() {
-                let input_facilitator = document.form.facilitator.value;
-                let all_facilitator = ["Vijai", "Andrew"];
+            //lastName error
+            if (lName.length < 2) {
+                this.formErrorHandle("nameError2", this.lengthError);
+            }
+            else if (!onlyAlpgbet(lName)) {
+                this.formErrorHandle("nameError2", this.algphbetError);
+            }
+            else {
+                document.getElementById("nameError2").innerHTML = "";
+            }
+        },
 
-                if (all_facilitator.includes(input_facilitator)) {
-                    document.getElementById("facilitatorError").innerHTML = "";
+        //validation b
+        validateFacilitator() {
+            let input_facilitator = document.form.facilitator.value;
+            let all_facilitator = ["Vijai", "Andrew"];
+
+            if (all_facilitator.includes(input_facilitator)) {
+                document.getElementById("facilitatorError").innerHTML = "";
+                return;
+            }
+            this.formErrorHandle("facilitatorError", this.facilitatoError);
+        },
+
+        //extra validation for ratio buttoms.
+        validateRadioButtoms() {
+            let radioButtoms = document.getElementsByName("age");
+
+            for (const buttom of radioButtoms) {
+                if (buttom.checked) {
+                    document.getElementById("ratioError").innerHTML = "";
                     return;
                 }
-                formErrorHandle("facilitatorError", this.facilitatoError);
             }
+            this.formErrorHandle("ratioError", this.ratioError);
+        },
 
-            //extra validation for ratio buttoms.
-            function validateRadioButtoms() {
-                let radioButtoms = document.getElementsByName("age");
+        validation() {
+            this.validateName();
+            this.validateFacilitator();
+            this.validateRadioButtoms();
+        },
 
-                for (const buttom of radioButtoms) {
-                    if (buttom.checked) {
-                        document.getElementById("ratioError").innerHTML = "";
-                        return;
-                    }
-                }
-                formErrorHandle("ratioError", this.ratioError);
-            }
-
-            function validation() {
-                validateName();
-                validateFacilitator();
-                validateRadioButtoms();
-            }
-        }
     },
 }
 </script>
