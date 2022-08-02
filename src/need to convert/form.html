@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Assignment 4</title>
+	<link rel="stylesheet" href="./CSS/css.css"/>
+	<script type="text/javascript">		
+		var lengthError = "Name must longer than 2 charcter";
+		var algphbetError = "Name must contain only algphbet";
+		var facilitatoError = "It is not the first name of our facilitator, please enter again.";
+		var ratioError = "You have to select your age.";
+
+		function formErrorHandle(errorId, message) {
+			document.getElementById(errorId).style.color = "red";
+			document.getElementById(errorId).innerHTML = message;
+			event.preventDefault();
+		}
+
+		//validation a
+		function validateName() {
+			let fName = document.form.firstName.value;
+			let lName = document.form.lastName.value;
+			
+			function onlyAlpgbet(input) {
+				return /^[a-zA-Z]+$/.test(input);
+			}
+
+			//firstName error
+			if(fName.length < 2){
+				formErrorHandle("nameError1", lengthError);
+			}
+			else if(!onlyAlpgbet(fName)) {
+				formErrorHandle("nameError1", algphbetError);
+			}
+			else {
+				document.getElementById("nameError1").innerHTML = "";
+			}
+			
+			//lastName error
+			if(lName.length < 2){
+				formErrorHandle("nameError2", lengthError);
+			}
+			else if(!onlyAlpgbet(lName)) {
+				formErrorHandle("nameError2", algphbetError);
+			}
+			else {
+				document.getElementById("nameError2").innerHTML = "";
+			}
+		}
+		
+		//validation b
+		function validateFacilitator() {
+			let input_facilitator = document.form.facilitator.value;
+			let all_facilitator = ["Vijai", "Andrew"];
+			
+			if(all_facilitator.includes(input_facilitator)) {
+				document.getElementById("facilitatorError").innerHTML = "";
+				return;
+			}
+			formErrorHandle("facilitatorError", facilitatoError);
+		}
+		
+		//extra validation for ratio buttoms.
+		function validateRadioButtoms(){
+			let radioButtoms = document.getElementsByName("age");
+
+			for (const buttom of radioButtoms) {
+				if (buttom.checked) {
+					document.getElementById("ratioError").innerHTML = "";
+					return;
+				}	
+			}
+			formErrorHandle("ratioError", ratioError);
+		}
+		
+		function validation() {
+			validateName();
+			validateFacilitator();
+			validateRadioButtoms();
+		}
+	</script>
+</head>
+<body>
+	<form method="POST" action="https://bucs601.com/submit.php" name="form">
+		<label for="firstName" class="question">First Name:</label><br>
+		<input type="text" id="firstName" name="firstName"><br>
+		<div id="nameError1"></div>
+		
+		<label for="lastName" class="question">Last Name:</label><br>
+		<input type="text" id="lastName" name="lastName"><br>
+		<div id="nameError2"></div>
+		
+		<label for="facilitator" class="question">Facilitator:</label><br>
+		<input type="text" id="facilitator" name="facilitator"><br>
+		<div id="facilitatorError"></div>
+		
+		<label class="question">Age?</label><br>		
+		<input type="radio" id="teen" name="age" value="teen">
+		<label for="op1">Less than 18</label>
+		<input type="radio" id="young" name="age" value="young">
+		<label for="op2">18 to 24</label>
+		<input type="radio" id="adult" name="age" value="adult">
+		<label for="op3">24 to 36</label>
+		<input type="radio" id="not-young" name="age" value="not-young">
+		<label for="op3">36 and older</label><br>
+		<div id="ratioError"></div>
+		
+		<label class="question">Any hobby?</label><br>
+		<input type="checkbox" id="movie" name="hobby" value="movie">
+		<label for="ck1">Movie</label>
+		<input type="checkbox" id="game" name="hobby" value="game">
+		<label for="ck2">Game</label>
+		<input type="checkbox" id="sport" name="hobby" value="sport">
+		<label for="ck3">Sport</label><br>
+		
+		<input type="submit" value="Submit" onClick="return validation()">
+	</form>
+</body>
+</html>
