@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Intro from '@/components/Introduction.vue'
 import Hometown from '@/components/Hometown.vue'
 import Gamelife from '@/components/Gamelife.vue'
-import Myform from '@/components/Tell-me-about-you.vue'
+import Survey from '@/components/Survey.vue'
 
 const routes = [
   {
@@ -26,9 +26,9 @@ const routes = [
     component: Gamelife,
   },
   {
-    path: "/Myform",
-    name: "form",
-    component: Myform,
+    path: "/Survey",
+    name: "survey",
+    component: Survey,
   },
 ];
 

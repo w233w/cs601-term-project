@@ -1,33 +1,17 @@
 <template>
     <form method="POST" action="https://bucs601.com/submit.php" name="form">
-        <label for="firstName" class="question">First Name:</label><br>
-        <input type="text" id="firstName" name="firstName"><br>
-        <div id="nameError1"></div>
 
-        <label for="lastName" class="question">Last Name:</label><br>
-        <input type="text" id="lastName" name="lastName"><br>
-        <div id="nameError2"></div>
 
-        <label class="question">Want to share your email so I can connect you??</label><br>
-        <input type="radio" id="Yes" value="Yes" name="askEmail" v-model="picked">
-        <label for="askEmailyes">Yes</label>
-        <input type="radio" id="No" value="No" name="askEmail" v-model="picked">
-        <label for="askEmailno">No</label><br>
-        <div id="emailInput" style="{ display: none }">
-            <label for="email" class="question">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <div id="emailError2"></div>
-        </div>
 
         <label class="question">Age?</label><br>
         <input type="radio" id="teen" name="age" value="teen">
-        <label for="op1">Less than 18</label>
+        <label for="op1">&lt; 18</label>
         <input type="radio" id="young" name="age" value="young">
         <label for="op2">18 to 24</label>
         <input type="radio" id="adult" name="age" value="adult">
         <label for="op3">24 to 36</label>
         <input type="radio" id="not-young" name="age" value="not-young">
-        <label for="op3">36 and older</label><br>
+        <label for="op3">&gt; 36</label><br>
         <div id="ratioError"></div>
 
         <label class="question">Any hobby?</label><br>
@@ -37,6 +21,28 @@
         <label for="ck2">Game</label>
         <input type="checkbox" id="sport" name="hobby" value="sport">
         <label for="ck3">Sport</label><br>
+
+        <label class="question">Let me know your idea.</label><br>
+        <textarea placeholder="Enter your idea..." rows="4" cols="20"></textarea><br>
+
+        <label class="question">Want to talk more?</label><br>
+        <input type="radio" id="Yes" value="Yes" name="askMore" v-model="picked">
+        <label for="Yes">Yes</label>
+        <input type="radio" id="No" value="No" name="askMore" v-model="picked">
+        <label for="No">No</label><br>
+        <div id="askForMore" :style="{ display: contectDisplay }">
+
+            <label for="firstName" class="question">First Name:</label><br>
+            <input type="text" id="firstName" name="firstName"><br>
+
+            <label for="lastName" class="question">Last Name:</label><br>
+            <input type="text" id="lastName" name="lastName"><br>
+            <div id="nameError"></div>
+
+            <label for="email" class="question">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <div id="emailError"></div>
+        </div>
 
         <input type="submit" value="Submit" onClick="return validation()">
         <input type="reset" value="Reset" onClick="return validation()">
@@ -54,7 +60,18 @@ export default {
             ratioError: "You have to select your age.",
             name: '',
             email: '',
-            picked: 'askEmail'
+            picked: 'askMore',
+            emailDisplay: 'none'
+        }
+    },
+    watch: {
+        picked(newPick) {
+            if (newPick == "Yes") {
+                this.contectDisplay = 'block';
+            }
+            if (newPick == "No") {
+                this.contectDisplay = 'none';
+            }
         }
     },
     methods: {
@@ -62,7 +79,6 @@ export default {
             this.name = "";
             this.email = "";
         },
-
         formErrorHandle(errorId, message) {
             document.getElementById(errorId).style.color = "red";
             document.getElementById(errorId).innerHTML = message;
@@ -137,7 +153,7 @@ export default {
 </script>
 
 <style>
-input {
+input, textarea {
     outline-style: none;
     border: 1px solid #CCC;
     border-radius: 3px;
@@ -155,5 +171,10 @@ form {
 
 .question {
     border-bottom: 2px double #66ccff;
+    margin-top: 60px;
+}
+
+#askForMore {
+    display: none;
 }
 </style>

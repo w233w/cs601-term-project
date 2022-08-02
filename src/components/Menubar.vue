@@ -12,7 +12,7 @@
                 <router-link to="./Gamelife">My Gamelife</router-link>
             </li>
             <li>
-                <router-link to="./Myform">Talk about yourself</router-link>
+                <router-link to="./Survey">Survey</router-link>
             </li>
         </ul>
     </nav>
