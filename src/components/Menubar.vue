@@ -8,3 +8,16 @@
 		</ul>
 	</nav>
 </template>
+
+<script>
+    export default {
+        name: 'Menu-bar',
+        data() {
+            return ;
+        }
+    }
+</script>
+
+<style>
+
+</style>
