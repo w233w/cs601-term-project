@@ -32,9 +32,6 @@
             Addintionally, I'm also doing game live streaming from time to time.
             And if you are interested, you can find my live broadcast room in the link below.
         </p>
-        <p>
-            &emsp;Here is a brief introduce vedio about myself.
-        </p>
     </main>
     <footer>
         <h3>Contect Information</h3>
