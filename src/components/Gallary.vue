@@ -3,7 +3,7 @@
 		<Menubar />
 	</header>
 	<main>
-		<Gallary class="gallary" :imageList="images" />
+		<Gallary :imageList="images" />
 	</main>
 </template>
 

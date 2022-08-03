@@ -4,7 +4,15 @@
 	</div>
 </template>
 
-<script setup>
+<script>
+export default {
+	name: 'App',
+	data() {
+		return {
+			
+		}
+	}
+}
 </script>
 
 <style>
