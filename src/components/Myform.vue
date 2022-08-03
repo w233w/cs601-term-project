@@ -34,10 +34,11 @@
 
             <label for="firstName" class="question">First Name:</label><br>
             <input type="text" id="firstName" name="firstName" v-model="fnameInput"><br>
+            <div id="error">{{ fnameError }}</div>
 
             <label for="lastName" class="question">Last Name:</label><br>
             <input type="text" id="lastName" name="lastName" v-model="lnameInput"><br>
-            <div id="error">{{ nameError }}</div>
+            <div id="error">{{ lnameError }}</div>
 
             <label for="email" class="question">Email:</label><br>
             <input type="text" id="email" name="email" v-model="emailInput"><br>
@@ -60,7 +61,8 @@ export default {
             facilitatoError: "It is not the first name of our facilitator, please enter again.",
             ratioError: "You have to select your age.",
             emailError: "",
-            nameError: "",
+            fnameError: "",
+            lnameError: "",
             rating: '',
             emailInput: '',
             fnameInput: '',
@@ -70,11 +72,7 @@ export default {
     },
     computed: {
         displayHide() {
-            if (this.picked == "Yes")
-                return true;
-            else {
-                return false;
-            }
+            return this.picked == "Yes" ? true : false;
         }
     },
     watch: {
@@ -82,10 +80,10 @@ export default {
             this.validateEmail(input);
         },
         fnameInput(input) {
-            this.validateName(input);
+            this.validatefName(input);
         },
         lnameInput(input) {
-            this.validateName(input);
+            this.validatelName(input);
         },
     },
     methods: {
@@ -102,19 +100,35 @@ export default {
             }
         },
 
-        validateName(name) {
+        validatefName(name) {
             //firstName error
             if (name.length < 2) {
-                this.nameError = "Name have to be more than 2 charactor.";
+                this.fnameError = "Name have to be more than 2 charactor.";
             }
             else if (!this.onlyAlpgbet(name)) {
-                this.nameError = "Name only allow alphbet";
+                this.fnameError = "Name only allow alphbet";
             }
-            else if (name == ""){
-                this.nameError = "";
+            else if (name == "") {
+                this.fnameError = "";
             }
             else {
-                this.nameError = "";
+                this.fnameError = "";
+            }
+        },
+
+        validatelName(name) {
+            //firstName error
+            if (name.length < 2) {
+                this.lnameError = "Name have to be more than 2 charactor.";
+            }
+            else if (!this.onlyAlpgbet(name)) {
+                this.lnameError = "Name only allow alphbet";
+            }
+            else if (name == "") {
+                this.lnameError = "";
+            }
+            else {
+                this.lnameError = "";
             }
         },
 

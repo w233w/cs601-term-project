@@ -1,10 +1,10 @@
 <template>
-	<header>
-		<Menubar />
-	</header>
-	<main>
-		<Gallary :imageList="images" />
-	</main>
+    <header>
+        <Menubar />
+    </header>
+    <main>
+        <Gallary :imageList="images" />
+    </main>
 </template>
 
 <script>

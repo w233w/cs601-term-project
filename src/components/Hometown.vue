@@ -56,7 +56,7 @@ import Menubar from './Menubar.vue'
 export default {
 	name: 'HometownVue',
 	components: {
-		'Menubar': Menubar
+		Menubar
 	}
 }
 </script>

@@ -14,8 +14,8 @@ import Myform from './Myform.vue'
 export default {
 	name: 'My-form',
 	components: {
-    Menubar,
-    Myform
-}
+		Menubar,
+		Myform
+	}
 }
 </script>

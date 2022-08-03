@@ -39,7 +39,7 @@ import Menubar from './Menubar.vue'
 export default {
     name: 'GamelifeVue',
     components: {
-        'Menubar': Menubar
+        Menubar
     }
 }
 </script>

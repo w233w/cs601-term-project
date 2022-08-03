@@ -49,11 +49,11 @@ export default {
     margin-right: auto;
     width: 50%;
     height: 50%;
-    border: 6px solid #e0e094;
     margin-top: 32px;
 }
 
 .imgSize img {
+    border: 6px solid #e0e094;
     height: 100%;
     width: 100%;
 }

@@ -53,7 +53,7 @@ import Menubar from './Menubar.vue'
 export default {
     name: 'IntroductionVue',
     components: {
-        'Menubar': Menubar
+        Menubar
     }
 }
 </script>
