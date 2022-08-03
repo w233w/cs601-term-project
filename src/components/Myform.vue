@@ -33,11 +33,11 @@
         <div id="hidePart" v-show="displayHide">
 
             <label for="firstName" class="question">First Name:</label><br>
-            <input type="text" id="firstName" name="firstName"><br>
+            <input type="text" id="firstName" name="firstName" v-model="fnameInput"><br>
 
             <label for="lastName" class="question">Last Name:</label><br>
-            <input type="text" id="lastName" name="lastName"><br>
-            <div id="error"></div>
+            <input type="text" id="lastName" name="lastName" v-model="lnameInput"><br>
+            <div id="error">{{ nameError }}</div>
 
             <label for="email" class="question">Email:</label><br>
             <input type="text" id="email" name="email" v-model="emailInput"><br>
@@ -60,11 +60,12 @@ export default {
             facilitatoError: "It is not the first name of our facilitator, please enter again.",
             ratioError: "You have to select your age.",
             emailError: "",
-            name: '',
+            nameError: "",
+            rating: '',
             emailInput: '',
-            picked: 'askMore',
-            contectDisplay: 'none',
-            rating: ''
+            fnameInput: '',
+            lnameInput: '',
+            picked: 'askMore'
         }
     },
     computed: {
@@ -79,21 +80,21 @@ export default {
     watch: {
         emailInput(input) {
             this.validateEmail(input);
-        }
+        },
+        fnameInput(input) {
+            this.validateName(input);
+        },
+        lnameInput(input) {
+            this.validateName(input);
+        },
     },
     methods: {
-        reset() {
-            this.name = "";
-            this.email = "";
-        },
-        formErrorHandle(errorId, message) {
-            document.getElementById(errorId).style.color = "red";
-            document.getElementById(errorId).innerHTML = message;
-            this.preventDefault();
+        onlyAlpgbet(input) {
+            return /^[a-zA-Z]+$/.test(input);
         },
 
         validateEmail(email) {
-            if (email.indexOf('@') > -1) {
+            if (email.indexOf('@') > -1 || email == "") {
                 this.emailError = "";
             }
             else {
@@ -101,48 +102,20 @@ export default {
             }
         },
 
-        //validation a
-        validateName() {
-            let fName = document.form.firstName.value;
-            let lName = document.form.lastName.value;
-
-            function onlyAlpgbet(input) {
-                return /^[a-zA-Z]+$/.test(input);
-            }
-
+        validateName(name) {
             //firstName error
-            if (fName.length < 2) {
-                this.formErrorHandle("nameError1", this.lengthError);
+            if (name.length < 2) {
+                this.nameError = "Name have to be more than 2 charactor.";
             }
-            else if (!onlyAlpgbet(fName)) {
-                this.formErrorHandle("nameError1", this.algphbetError);
+            else if (!this.onlyAlpgbet(name)) {
+                this.nameError = "Name only allow alphbet";
             }
-            else {
-                document.getElementById("nameError1").innerHTML = "";
-            }
-
-            //lastName error
-            if (lName.length < 2) {
-                this.formErrorHandle("nameError2", this.lengthError);
-            }
-            else if (!onlyAlpgbet(lName)) {
-                this.formErrorHandle("nameError2", this.algphbetError);
+            else if (name == ""){
+                this.nameError = "";
             }
             else {
-                document.getElementById("nameError2").innerHTML = "";
+                this.nameError = "";
             }
-        },
-
-        //validation b
-        validateFacilitator() {
-            let input_facilitator = document.form.facilitator.value;
-            let all_facilitator = ["Vijai", "Andrew"];
-
-            if (all_facilitator.includes(input_facilitator)) {
-                document.getElementById("facilitatorError").innerHTML = "";
-                return;
-            }
-            this.formErrorHandle("facilitatorError", this.facilitatoError);
         },
 
         //extra validation for ratio buttoms.
