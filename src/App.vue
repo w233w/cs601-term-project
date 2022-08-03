@@ -8,51 +8,8 @@
 </script>
 
 <style>
-/*Phone Size*/
-@media only screen and (max-width: 600px) {
-	header {
-		height: 42px;
-		width: 100%;
-	}
-
-	.nav-header {
-		display: none;
-	}
-
-	/*Since only 3 pages, each label take 1/3 of width.*/
-	.nav-ul li {
-		float: left;
-		width: 33.33%;
-	}
-
-	.nav-ul a {
-		padding: 12px 12px;
-	}
-
-	/*Avoid conflict with menu*/
-	main {
-		padding-top: 32px;
-	}
-
-	main,
-	footer {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-
-	/*Center h1 and table when screen small*/
-	h1 {
-		text-align: center;
-	}
-
-	.info-table {
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
 /*Tablet Size*/
-@media only screen and (min-width: 600px) and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
 
 	/*Menu gose to top when screen become smaller*/
 	header {
@@ -88,7 +45,7 @@
 }
 
 /*PC Screen Size*/
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 600px) {
 
 	/*Vertical menu when using large screen*/
 	header {

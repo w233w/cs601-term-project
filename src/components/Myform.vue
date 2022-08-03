@@ -30,7 +30,7 @@
         <input type="radio" id="No" value="No" name="askMore" v-model="picked">
         <label for="No">No</label><br>
 
-        <div id="hidePart" :style="{ display: contectDisplay }">
+        <div id="hidePart" v-show="displayHide">
 
             <label for="firstName" class="question">First Name:</label><br>
             <input type="text" id="firstName" name="firstName"><br>
@@ -67,16 +67,16 @@ export default {
             rating: ''
         }
     },
+    computed: {
+        displayHide() {
+            if (this.picked == "Yes")
+                return true;
+            else {
+                return false;
+            }
+        }
+    },
     watch: {
-        picked(newPick) {
-            if (newPick == "Yes") {
-                this.contectDisplay = 'block';
-            }
-            if (newPick == "No") {
-                this.contectDisplay = 'none';
-            }
-        },
-
         emailInput(input) {
             this.validateEmail(input);
         }

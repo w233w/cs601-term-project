@@ -12,6 +12,12 @@
                 <router-link to="./Gamelife">My Gamelife</router-link>
             </li>
             <li>
+                <router-link to="./Resume">Resume</router-link>
+            </li>
+            <li>
+                <router-link to="./Gallary">Gallary</router-link>
+            </li>
+            <li>
                 <router-link to="./Survey">Survey</router-link>
             </li>
         </ul>

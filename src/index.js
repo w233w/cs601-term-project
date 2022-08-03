@@ -1,23 +1,25 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Intro from '@/components/Introduction.vue'
+import Introduction from '@/components/Introduction.vue'
 import Hometown from '@/components/Hometown.vue'
 import Gamelife from '@/components/Gamelife.vue'
 import Survey from '@/components/Survey.vue'
+import Gallary from '@/components/Gallary.vue'
+import Resume from '@/components/Resume.vue'
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: Intro,
+    component: Introduction,
   },
   {
     path: "/Introduction",
-    name: "Intro",
-    component: Intro,
+    name: "introduction",
+    component: Introduction,
   },
   {
     path: "/Hometown",
-    name: "Hometown",
+    name: "hometown",
     component: Hometown,
   },
   {
@@ -29,6 +31,16 @@ const routes = [
     path: "/Survey",
     name: "survey",
     component: Survey,
+  },
+  {
+    path: "/Gallary",
+    name: "gallary",
+    component: Gallary,
+  },
+  {
+    path: "/Resume",
+    name: "resume",
+    component: Resume,
   },
 ];
 
