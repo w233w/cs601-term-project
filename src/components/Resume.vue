@@ -3,23 +3,21 @@
         <Menubar />
     </header>
     <main>
-        <ResumeTitleBar :title="title1" />
-        <div>
-            <div v-for="data in resumeData" v-bind:key="data.title">{{ data }}</div>
-        </div>
+        <ResumeSection v-for="data in resumeData" :title="data.title" :breakline="data.breakline" :layout="data.layout"
+            :content="data.content" v-bind:key="data.title" />
     </main>
 </template>
 
 <script>
 import Menubar from './Menubar.vue'
-import ResumeTitleBar from './ResumeTitleBar.vue'
+import ResumeSection from './ResumeSection.vue'
 import resumejson from '../assets/resume.json'
 
 export default {
     name: 'ResumeVue',
     components: {
         Menubar,
-        ResumeTitleBar,
+        ResumeSection,
     },
     data() {
         return {

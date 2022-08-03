@@ -9,7 +9,7 @@ export default {
 	name: 'App',
 	data() {
 		return {
-			
+
 		}
 	}
 }
@@ -119,8 +119,7 @@ figure.in-text img {
 	background-image: url("./assets/table_background.jpg");
 }
 
-.info-table th,
-td {
+.info-table th td {
 	border: 1px solid black;
 	padding: 3px 15px;
 }
