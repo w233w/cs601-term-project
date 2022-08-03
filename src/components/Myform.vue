@@ -89,59 +89,64 @@ export default {
             return /^[a-zA-Z]+$/.test(input);
         },
 
+        validEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        },
+
         validateEmail(email) {
-            if (email.indexOf('@') > -1 || email == "") {
+            if (this.validEmail(email) || email == "") {
                 this.emailError = "";
+                return true;
             }
             else {
                 this.emailError = "Invalid email address.";
+                return false;
             }
         },
 
         validatefName(name) {
             if (name.length < 2) {
                 this.fnameError = "Name must longer than 2 charcter.";
+                return false;
             }
             else if (!this.onlyAlpgbet(name)) {
                 this.fnameError = "Name must contain only algphbet.";
+                return false;
             }
             else if (name == "") {
                 this.fnameError = "";
+                return true;
             }
             else {
                 this.fnameError = "";
+                return true;
             }
         },
 
         validatelName(name) {
             if (name.length < 2) {
                 this.lnameError = "Name must longer than 2 charcter.";
+                return false;
             }
             else if (!this.onlyAlpgbet(name)) {
                 this.lnameError = "Name must contain only algphbet.";
+                return false;
             }
             else if (name == "") {
                 this.lnameError = "";
+                return true;
             }
             else {
                 this.lnameError = "";
+                return true;
             }
         },
 
         checkFrorm(e) {
-            if (this.name && this.age) {
+            if (this.validateEmail(this.emailInput) && this.validatefName(this.fnameInput) && this.validatelName(this.lnameInput)) {
                 return true;
             }
-
-            this.errors = [];
-
-            if (!this.name) {
-                this.errors.push('Name required.');
-            }
-            if (!this.age) {
-                this.errors.push('Age required.');
-            }
-
             e.preventDefault();
         }
     },
