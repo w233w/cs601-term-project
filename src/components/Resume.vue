@@ -3,7 +3,7 @@
         <Menubar />
     </header>
     <main>
-        <ResumeSection v-for="data in resumeData" :title="data.title" :breakline="data.breakline" :layout="data.layout"
+        <ResumeSection v-for="data in resumeData" :title="data.title" :breakline="data.breakline"
             :content="data.content" v-bind:key="data.title" />
     </main>
 </template>

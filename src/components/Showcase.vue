@@ -3,7 +3,7 @@
         <Menubar />
     </header>
     <main>
-        <P>Editing...</P>
+        <p>Editing...</p>
     </main>
 </template>
 

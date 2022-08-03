@@ -1,6 +1,6 @@
 <template>
     <!-- 表单不会写 -->
-    <form method="POST" action="..." name="form">
+    <el-form method="POST" action="/..." name="form" id="survey" @submit="checkForm">
         <label class="question">Rate my page</label><br>
         <input type="radio" id="1" name="rate" value="1" v-model="rating">
         <label for="1">1</label>
@@ -12,7 +12,6 @@
         <label for="4">4</label>
         <input type="radio" id="5" name="rate" value="5" v-model="rating">
         <label for="5">5</label><br>
-        <div id="error"></div>
 
         <label class="question">Any hobby?</label><br>
         <input type="checkbox" id="movie" name="hobby" value="movie">
@@ -49,26 +48,24 @@
 
         <input type="submit" value="Submit" onClick="return validation()">
         <input type="reset" value="Reset">
-    </form>
+    </el-form>
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
     name: 'My-form',
     data() {
         return {
-            lengthError: "Name must longer than 2 charcter",
-            algphbetError: "Name must contain only algphbet",
-            facilitatoError: "It is not the first name of our facilitator, please enter again.",
-            ratioError: "You have to select your age.",
             emailError: "",
             fnameError: "",
             lnameError: "",
-            rating: '',
+            rating: Number,
             emailInput: '',
             fnameInput: '',
             lnameInput: '',
-            picked: 'askMore'
+            picked: '',
+            delivery: ref(false)
         }
     },
     computed: {
@@ -103,10 +100,10 @@ export default {
 
         validatefName(name) {
             if (name.length < 2) {
-                this.fnameError = "Name have to be more than 2 charactor.";
+                this.fnameError = "Name must longer than 2 charcter.";
             }
             else if (!this.onlyAlpgbet(name)) {
-                this.fnameError = "Name only allow alphbet";
+                this.fnameError = "Name must contain only algphbet.";
             }
             else if (name == "") {
                 this.fnameError = "";
@@ -118,10 +115,10 @@ export default {
 
         validatelName(name) {
             if (name.length < 2) {
-                this.lnameError = "Name have to be more than 2 charactor.";
+                this.lnameError = "Name must longer than 2 charcter.";
             }
             else if (!this.onlyAlpgbet(name)) {
-                this.lnameError = "Name only allow alphbet";
+                this.lnameError = "Name must contain only algphbet.";
             }
             else if (name == "") {
                 this.lnameError = "";
@@ -131,25 +128,22 @@ export default {
             }
         },
 
-        // //extra validation for ratio buttoms.
-        // validateRadioButtoms() {
-        //     let radioButtoms = document.getElementsByName("age");
+        checkFrorm(e) {
+            if (this.name && this.age) {
+                return true;
+            }
 
-        //     for (const buttom of radioButtoms) {
-        //         if (buttom.checked) {
-        //             document.getElementById("ratioError").innerHTML = "";
-        //             return;
-        //         }
-        //     }
-        //     this.formErrorHandle("ratioError", this.ratioError);
-        // },
+            this.errors = [];
 
-        // validation() {
-        //     this.validateName();
-        //     this.validateFacilitator();
-        //     this.validateRadioButtoms();
-        // },
+            if (!this.name) {
+                this.errors.push('Name required.');
+            }
+            if (!this.age) {
+                this.errors.push('Age required.');
+            }
 
+            e.preventDefault();
+        }
     },
 }
 </script>
@@ -163,7 +157,7 @@ textarea {
     margin: 8px 8px;
 }
 
-form {
+#survey {
     margin: 32px auto;
     padding: 32px 24px;
     border-radius: 8px;

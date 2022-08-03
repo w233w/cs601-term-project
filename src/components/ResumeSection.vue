@@ -13,7 +13,7 @@
                     <td class="right" id="sub_description">{{ data.sub_description }}</td>
                 </tr>
             </table>
-            <div id="detail" v-for="row in data.detail" v-bind:key="row.length" :style="{DetailLayout}">
+            <div id="detail" v-for="row in data.detail" v-bind:key="row.length">
                 <ul id="detailList">
                     <li>{{ row }}</li>
                 </ul>
@@ -39,10 +39,6 @@ export default {
                 return true
             }
         },
-        layout: {
-            type: Array,
-            required: true
-        },
         content: {
             type: Array,
             required: true
@@ -51,23 +47,11 @@ export default {
     data() {
         return {
             breaklineWidth: "100%",
-            Layout: "{}"
         }
     },
     computed: {
         breakLine() {
             return this.breakline ? "1px solid #444" : "";
-        },
-        DetailLayout() {
-            if(this.layout == "horizontal") {
-                return "float : left";
-            }
-            else if(this.layout == "two_row") {
-                return "{}";
-            }
-            else {
-                return "{}";
-            }
         }
     }
 }
