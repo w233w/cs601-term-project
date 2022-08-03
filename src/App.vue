@@ -112,6 +112,9 @@ figure.in-text {
 figure.in-text img {
 	width: 70%;
 	height: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .info-table {
