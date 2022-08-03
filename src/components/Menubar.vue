@@ -18,9 +18,6 @@
                 <router-link to="./Gallary">Gallary</router-link>
             </li>
             <li>
-                <router-link to="./Showcase">Showcase</router-link>
-            </li>
-            <li>
                 <router-link to="./Survey">Survey</router-link>
             </li>
         </ul>
