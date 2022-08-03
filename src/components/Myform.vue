@@ -1,11 +1,12 @@
 <template>
-    <form method="POST" action="https://bucs601.com/submit.php" name="form">
+    <!-- 表单不会写 -->
+    <form method="POST" action="..." name="form">
         <label class="question">Rate my page</label><br>
         <input type="radio" id="1" name="rate" value="1" v-model="rating">
         <label for="1">1</label>
         <input type="radio" id="2" name="rate" value="2" v-model="rating">
         <label for="2">2</label>
-        <input type="radio" id="3" name="rate" value="3" v-model="rating" checked>
+        <input type="radio" id="3" name="rate" value="3" v-model="rating">
         <label for="3">3</label>
         <input type="radio" id="4" name="rate" value="4" v-model="rating">
         <label for="4">4</label>
@@ -101,7 +102,6 @@ export default {
         },
 
         validatefName(name) {
-            //firstName error
             if (name.length < 2) {
                 this.fnameError = "Name have to be more than 2 charactor.";
             }
@@ -117,7 +117,6 @@ export default {
         },
 
         validatelName(name) {
-            //firstName error
             if (name.length < 2) {
                 this.lnameError = "Name have to be more than 2 charactor.";
             }
@@ -132,24 +131,24 @@ export default {
             }
         },
 
-        //extra validation for ratio buttoms.
-        validateRadioButtoms() {
-            let radioButtoms = document.getElementsByName("age");
+        // //extra validation for ratio buttoms.
+        // validateRadioButtoms() {
+        //     let radioButtoms = document.getElementsByName("age");
 
-            for (const buttom of radioButtoms) {
-                if (buttom.checked) {
-                    document.getElementById("ratioError").innerHTML = "";
-                    return;
-                }
-            }
-            this.formErrorHandle("ratioError", this.ratioError);
-        },
+        //     for (const buttom of radioButtoms) {
+        //         if (buttom.checked) {
+        //             document.getElementById("ratioError").innerHTML = "";
+        //             return;
+        //         }
+        //     }
+        //     this.formErrorHandle("ratioError", this.ratioError);
+        // },
 
-        validation() {
-            this.validateName();
-            this.validateFacilitator();
-            this.validateRadioButtoms();
-        },
+        // validation() {
+        //     this.validateName();
+        //     this.validateFacilitator();
+        //     this.validateRadioButtoms();
+        // },
 
     },
 }
@@ -170,7 +169,7 @@ form {
     border-radius: 8px;
     box-shadow: 0 4px 20px lightgray;
     text-align: center;
-    background-color: rgb(231, 216, 119)
+    background-color: #E0E094
 }
 
 .question {

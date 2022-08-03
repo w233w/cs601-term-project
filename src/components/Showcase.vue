@@ -2,6 +2,9 @@
     <header>
         <Menubar />
     </header>
+    <main>
+        <P>Editing...</P>
+    </main>
 </template>
 
 <script>

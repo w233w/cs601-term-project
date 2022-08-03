@@ -22,7 +22,7 @@
     },
     "major_coursework": {
         "title": "MAJOR COURSEWORK",
-        "breakline": false,
+        "breakline": true,
         "layout": "two_row",
         "content": [
             {

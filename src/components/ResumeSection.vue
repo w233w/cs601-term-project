@@ -1,7 +1,7 @@
 <template>
     <section id="resumeSection">
         <h2 id="resumeSectionTitle">{{ title }}</h2>
-        <div class="breakline" :style="{ width: breaklineWidth, 'border-bottom': breakLine }"></div>
+        <div class="breakline" :style="{ width: breaklineWidth, 'border-top': breakLine }"></div>
         <div v-for="data in content" v-bind:key="data.detail[0]">
             <table id="innertitle">
                 <tr>
@@ -89,6 +89,10 @@ export default {
 
 #description {
     font-style: oblique;
+}
+
+.breakline {
+    margin-top: -10px;
 }
 
 .left {
