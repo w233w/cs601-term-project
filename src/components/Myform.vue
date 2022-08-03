@@ -1,5 +1,4 @@
 <template>
-    <!-- 表单不会写 -->
     <el-form method="POST" action="/..." name="form" id="survey" @submit="checkForm">
         <label class="question">Rate my page</label><br>
         <input type="radio" id="1" name="rate" value="1" v-model="rating">
@@ -10,7 +9,7 @@
         <label for="3">3</label>
         <input type="radio" id="4" name="rate" value="4" v-model="rating">
         <label for="4">4</label>
-        <input type="radio" id="5" name="rate" value="5" v-model="rating">
+        <input type="radio" id="5" name="rate" value="5" v-model="rating" required>
         <label for="5">5</label><br>
 
         <label class="question">Any hobby?</label><br>
@@ -46,7 +45,7 @@
 
         </div>
 
-        <input type="submit" value="Submit" onClick="return validation()">
+        <input type="submit" value="Submit">
         <input type="reset" value="Reset">
     </el-form>
 </template>
