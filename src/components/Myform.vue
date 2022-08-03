@@ -1,5 +1,5 @@
 <template>
-    <el-form method="POST" action="/..." name="form" id="survey" @submit="checkForm">
+    <form method="POST" action="/..." name="form" id="survey" @submit="checkForm">
         <label class="question">Rate my page</label><br>
         <input type="radio" id="1" name="rate" value="1" v-model="rating">
         <label for="1">1</label>
@@ -47,7 +47,7 @@
 
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">
-    </el-form>
+    </form>
 </template>
 
 <script>
