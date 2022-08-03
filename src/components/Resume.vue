@@ -4,25 +4,27 @@
     </header>
     <main>
         <ResumeTitleBar :title="title1"/>
-        <ul>
-            <li>Having over 5 years of study abord experiences; fluenting in written and verbal English communication.</li>
-        </ul>
+    <div>
+        <div v-for="data in resumeData" v-bind:key="data.title">{{data}}</div>
+    </div>
     </main>
 </template>
 
 <script>
 import Menubar from './Menubar.vue'
 import ResumeTitleBar from './ResumeTitleBar.vue'
+import resumejson from '../assets/resume.json'
 
 export default {
     name: 'ResumeVue',
     components: {
-        "Menubar": Menubar,
-        ResumeTitleBar
-    },
+    Menubar,
+    ResumeTitleBar,
+},
     data() {
         return {
-            title1: "ABILITY"
+            title1: "ABILITY",
+            resumeData: resumejson
         }
     }
 }
