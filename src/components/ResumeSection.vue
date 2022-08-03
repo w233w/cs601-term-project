@@ -87,6 +87,10 @@ export default {
     font-weight: 800;
 }
 
+#description {
+    font-style: oblique;
+}
+
 .left {
     text-align: left;
 }
