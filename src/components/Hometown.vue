@@ -27,6 +27,7 @@
 			Zhejiang is located at the east of China and close to the East China Sea, the monsoon climate is humid and
 			rainy.
 			So as Hangzhou, the weather become hot and rainy in summer, and little rain in winter.
+			I remember once the temperature was even raised to 40 C. 
 		</p>
 		<p>
 			&emsp;The most interesting thing about Hangzhou is that the city is built on the edge of a huge lake.

@@ -23,6 +23,10 @@
         <figure class="in-text">
             <img src="../assets/steam.jpg" alt="my game collection">
         </figure>
+        <p>
+            Let me introduce some of my favorite games.
+            
+        </p>
     </main>
     <footer>
         <h3>Want play with me?</h3>

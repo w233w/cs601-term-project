@@ -17,7 +17,7 @@ export default {
 
 <style>
 /*Tablet Size*/
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width:1000px) {
 
 	/*Menu gose to top when screen become smaller*/
 	header {
@@ -53,7 +53,7 @@ export default {
 }
 
 /*PC Screen Size*/
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 1000px) {
 
 	/*Vertical menu when using large screen*/
 	header {
