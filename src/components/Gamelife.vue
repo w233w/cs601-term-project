@@ -24,8 +24,8 @@
             <img src="../assets/steam.jpg" alt="my game collection">
         </figure>
         <p>
-            Let me introduce some of my favorite games.
-            
+            &emsp;Let me introduce some of my favorite games.
+            <!-- TODO -->
         </p>
     </main>
     <footer>
