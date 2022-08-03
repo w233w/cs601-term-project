@@ -29,6 +29,3 @@ export default {
     name: 'Menu-bar'
 }
 </script>
-
-<style>
-</style>

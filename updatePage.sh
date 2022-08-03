@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# 發生錯誤時執行終止指令
+# Used to end script while error
 set -e
 
 npm run build
