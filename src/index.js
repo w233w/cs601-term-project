@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter } from "vue-router";
 import Introduction from '@/components/Introduction.vue'
 import Hometown from '@/components/Hometown.vue'
 import Gamelife from '@/components/Gamelife.vue'
@@ -51,7 +51,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
