@@ -1,7 +1,7 @@
 <template>
-    <form method="POST" action="/..." name="form" id="survey" @submit="checkForm">
+    <form method="get" name="form" id="survey" @submit.prevent="checkForm">
         <label class="question">Rate my page</label><br>
-        <input type="radio" id="1" name="rate" value="1" v-model="rating">
+        <input type="radio" id="1" name="rate" value="1" v-model="rating" required>
         <label for="1">1</label>
         <input type="radio" id="2" name="rate" value="2" v-model="rating">
         <label for="2">2</label>
@@ -9,7 +9,7 @@
         <label for="3">3</label>
         <input type="radio" id="4" name="rate" value="4" v-model="rating">
         <label for="4">4</label>
-        <input type="radio" id="5" name="rate" value="5" v-model="rating" required>
+        <input type="radio" id="5" name="rate" value="5" v-model="rating">
         <label for="5">5</label><br>
 
         <label class="question">Any hobby?</label><br>
@@ -31,13 +31,9 @@
 
         <div id="hidePart" v-show="displayHide">
 
-            <label for="firstName" class="question">First Name:</label><br>
-            <input type="text" id="firstName" name="firstName" v-model="fnameInput"><br>
-            <div id="error">{{ fnameError }}</div>
-
-            <label for="lastName" class="question">Last Name:</label><br>
-            <input type="text" id="lastName" name="lastName" v-model="lnameInput"><br>
-            <div id="error">{{ lnameError }}</div>
+            <label for="name" class="question">Your Name:</label><br>
+            <input type="text" id="name" name="name" v-model="nameInput"><br>
+            <div id="error">{{ nameError }}</div>
 
             <label for="email" class="question">Email:</label><br>
             <input type="text" id="email" name="email" v-model="emailInput"><br>
@@ -51,20 +47,16 @@
 </template>
 
 <script>
-import { ref } from 'vue'
 export default {
     name: 'My-form',
     data() {
         return {
             emailError: "",
-            fnameError: "",
-            lnameError: "",
+            nameError: "",
             rating: Number,
             emailInput: '',
-            fnameInput: '',
-            lnameInput: '',
-            picked: '',
-            delivery: ref(false)
+            nameInput: '',
+            picked: ''
         }
     },
     computed: {
@@ -76,14 +68,20 @@ export default {
         emailInput(input) {
             this.validateEmail(input);
         },
-        fnameInput(input) {
-            this.validatefName(input);
-        },
-        lnameInput(input) {
-            this.validatelName(input);
-        },
+        nameInput(input) {
+            this.validateName(input);
+        }
     },
     methods: {
+        reset() {
+            this.emailError = "";
+            this.nameError = "";
+            this.rating = 1;
+            this.emailInput = "";
+            this.nameInput = "";
+            this.picked = "";
+        },
+
         onlyAlpgbet(input) {
             return /^[a-zA-Z]+$/.test(input);
         },
@@ -104,18 +102,18 @@ export default {
             }
         },
 
-        validatefName(name) {
+        validateName(name) {
+            if (name == "") {
+                this.nameError = "";
+                return true;
+            }
             if (name.length < 2) {
-                this.fnameError = "Name must longer than 2 charcter.";
+                this.nameError = "Name must longer than 2 charcter.";
                 return false;
             }
             else if (!this.onlyAlpgbet(name)) {
-                this.fnameError = "Name must contain only algphbet.";
+                this.nameError = "Name must contain only algphbet.";
                 return false;
-            }
-            else if (name == "") {
-                this.fnameError = "";
-                return true;
             }
             else {
                 this.fnameError = "";
@@ -123,30 +121,13 @@ export default {
             }
         },
 
-        validatelName(name) {
-            if (name.length < 2) {
-                this.lnameError = "Name must longer than 2 charcter.";
-                return false;
-            }
-            else if (!this.onlyAlpgbet(name)) {
-                this.lnameError = "Name must contain only algphbet.";
-                return false;
-            }
-            else if (name == "") {
-                this.lnameError = "";
+        checkForm() {
+            if (this.validateEmail(this.emailInput) && this.validateName(this.nameInput)) {
+                console.log("pass");
                 return true;
             }
-            else {
-                this.lnameError = "";
-                return true;
-            }
-        },
-
-        checkFrorm(e) {
-            if (this.validateEmail(this.emailInput) && this.validatefName(this.fnameInput) && this.validatelName(this.lnameInput)) {
-                return true;
-            }
-            e.preventDefault();
+            console.log("fail");
+            return false;
         }
     },
 }
