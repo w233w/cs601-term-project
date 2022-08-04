@@ -1,15 +1,15 @@
 <template>
-    <form method="get" name="form" id="survey" @submit.prevent="checkForm">
+    <form name="form" id="survey" @submit.prevent="submitForm">
         <label class="question">Rate my page</label><br>
-        <input type="radio" id="1" name="rate" value="1" v-model="rating" required>
+        <input type="radio" id="1" name="rate" value="1" v-model="form.rate" required>
         <label for="1">1</label>
-        <input type="radio" id="2" name="rate" value="2" v-model="rating">
+        <input type="radio" id="2" name="rate" value="2" v-model="form.rate">
         <label for="2">2</label>
-        <input type="radio" id="3" name="rate" value="3" v-model="rating">
+        <input type="radio" id="3" name="rate" value="3" v-model="form.rate">
         <label for="3">3</label>
-        <input type="radio" id="4" name="rate" value="4" v-model="rating">
+        <input type="radio" id="4" name="rate" value="4" v-model="form.rate">
         <label for="4">4</label>
-        <input type="radio" id="5" name="rate" value="5" v-model="rating">
+        <input type="radio" id="5" name="rate" value="5" v-model="form.rate">
         <label for="5">5</label><br>
 
         <label class="question">Any hobby?</label><br>
@@ -21,7 +21,7 @@
         <label for="ck3">Sport</label><br>
 
         <label class="question">Let me know your idea.</label><br>
-        <textarea placeholder="Enter your idea..." rows="4" cols="24"></textarea><br>
+        <textarea placeholder="Enter your idea..." rows="4" cols="24" v-model="form.msg"></textarea><br>
 
         <label class="question">Want to talk more?</label><br>
         <input type="radio" id="Yes" value="Yes" name="askMore" v-model="picked">
@@ -32,11 +32,11 @@
         <div id="hidePart" v-show="displayHide">
 
             <label for="name" class="question">Your Name:</label><br>
-            <input type="text" id="name" name="name" v-model="nameInput"><br>
+            <input type="text" id="name" name="name" v-model="form.username"><br>
             <div id="error">{{ nameError }}</div>
 
-            <label for="email" class="question">Email:</label><br>
-            <input type="text" id="email" name="email" v-model="emailInput"><br>
+            <label for="Email" class="question">Email:</label><br>
+            <input type="text" id="Email" name="Email" v-model="form.email"><br>
             <div id="error">{{ emailError }}</div>
 
         </div>
@@ -47,16 +47,21 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'My-form',
     data() {
         return {
             emailError: "",
             nameError: "",
-            rating: Number,
-            emailInput: '',
-            nameInput: '',
-            picked: ''
+            picked: '',
+            form: {
+                rate: Number,
+                msg: '',
+                email: '',
+                username: '',
+            }
         }
     },
     computed: {
@@ -65,23 +70,14 @@ export default {
         }
     },
     watch: {
-        emailInput(input) {
+        email(input) {
             this.validateEmail(input);
         },
-        nameInput(input) {
+        username(input) {
             this.validateName(input);
         }
     },
     methods: {
-        reset() {
-            this.emailError = "";
-            this.nameError = "";
-            this.rating = 1;
-            this.emailInput = "";
-            this.nameInput = "";
-            this.picked = "";
-        },
-
         onlyAlpgbet(input) {
             return /^[a-zA-Z]+$/.test(input);
         },
@@ -121,13 +117,22 @@ export default {
             }
         },
 
-        checkForm() {
-            if (this.validateEmail(this.emailInput) && this.validateName(this.nameInput)) {
+        submitForm() {
+            if (this.validateEmail(this.form.email) && this.validateName(this.form.username)) {
                 console.log("pass");
-                return true;
+                console.log(this.form)
+                axios.post('http://localhost:8080/add', this.form)
+                    .then((res) => {
+                        console.log(res);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    }).finally(() => {
+                        console.log("PASS");
+                    });
+                return ;
             }
             console.log("fail");
-            return false;
         }
     },
 }
