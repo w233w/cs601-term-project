@@ -121,7 +121,7 @@ export default {
             if (this.validateEmail(this.form.email) && this.validateName(this.form.username)) {
                 console.log("pass");
                 console.log(this.form)
-                axios.post('https://spring-mybatis-1659598207454.azurewebsites.net/add', this.form)
+                axios.post('/add', this.form)
                     .then((res) => {
                         console.log(res);
                     })
