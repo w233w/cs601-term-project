@@ -12,14 +12,6 @@
         <input type="radio" id="5" name="rate" value="5" v-model="form.rate">
         <label for="5">5</label><br>
 
-        <label class="question">Any hobby?</label><br>
-        <input type="checkbox" id="movie" name="hobby" value="movie">
-        <label for="ck1">Movie</label>
-        <input type="checkbox" id="game" name="hobby" value="game">
-        <label for="ck2">Game</label>
-        <input type="checkbox" id="sport" name="hobby" value="sport">
-        <label for="ck3">Sport</label><br>
-
         <label class="question">Let me know your idea.</label><br>
         <textarea placeholder="Enter your idea..." rows="4" cols="24" v-model="form.msg"></textarea><br>
 
@@ -121,7 +113,7 @@ export default {
             if (this.validateEmail(this.form.email) && this.validateName(this.form.username)) {
                 console.log("pass");
                 console.log(this.form)
-                axios.post('/add', this.form)
+                axios.post('https://spring-mybatis-1659598207454.azurewebsites.net/add', this.form)
                     .then((res) => {
                         console.log(res);
                     })
