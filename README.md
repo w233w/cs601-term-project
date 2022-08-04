@@ -9,5 +9,10 @@ https://github.com/w233w/spring-boot-backend-for-project
 npm run serve
 ```
 
+## To update github pages
+```console
+sh updateProject.sh
+```
+
 ## Check depolyed webpage
 At: https://w233w.github.io/cs601-term-project/
