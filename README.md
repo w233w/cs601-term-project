@@ -11,7 +11,7 @@ npm run serve
 
 ## To update github pages
 ```console
-sh updateProject.sh
+sh updatePage.sh
 ```
 
 ## Check depolyed webpage
