@@ -47,13 +47,14 @@ export default {
         return {
             emailError: "",
             nameError: "",
-            picked: '',
+            picked: "",
             form: {
                 rate: Number,
                 msg: '',
                 email: '',
                 username: '',
-            }
+            },
+            done: false
         }
     },
     computed: {
@@ -62,12 +63,12 @@ export default {
         }
     },
     watch: {
-        email(input) {
-            this.validateEmail(input);
+        'form.email': function (newVal) {
+            this.validateEmail(newVal);
         },
-        username(input) {
-            this.validateName(input);
-        }
+        'form.username': function (newVal) {
+            this.validateName(newVal);
+        },
     },
     methods: {
         onlyAlpgbet(input) {
@@ -80,6 +81,7 @@ export default {
         },
 
         validateEmail(email) {
+            // User can not enter the email, bu if user do, email must be valie.
             if (this.validEmail(email) || email == "") {
                 this.emailError = "";
                 return true;
@@ -91,6 +93,7 @@ export default {
         },
 
         validateName(name) {
+            // User can not enter the name, but if user do, the name must have t least 2 char long and have only algphbet.
             if (name == "") {
                 this.nameError = "";
                 return true;
@@ -104,25 +107,25 @@ export default {
                 return false;
             }
             else {
-                this.fnameError = "";
+                this.nameError = "";
                 return true;
             }
         },
 
-        submitForm() {
+        submitForm(e) {
             if (this.validateEmail(this.form.email) && this.validateName(this.form.username)) {
-                console.log("pass");
                 console.log(this.form)
                 axios.post('https://spring-mybatis-1659598207454.azurewebsites.net/add', this.form)
                     .then((res) => {
                         console.log(res);
                     })
                     .catch((error) => {
-                        console.log(error);
+                        alert(`Error ${error}`);
                     }).finally(() => {
-                        console.log("PASS");
+                        alert("Your review has successfully sent to my dataset.");
                     });
-                return ;
+                e.target.reset();
+                return;
             }
             console.log("fail");
         }
