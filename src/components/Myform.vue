@@ -1,5 +1,5 @@
 <template>
-    <form name="form" id="survey" @submit.prevent="submitForm">
+    <form name="form" id="survey" @submit.prevent="submitForm" v-show="!done">
         <label class="question">Rate my page</label><br>
         <input type="radio" id="1" name="rate" value="1" v-model="form.rate" required>
         <label for="1">1</label>
@@ -36,9 +36,15 @@
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">
     </form>
+    <form id="survey" v-show="done">
+        <label>Thank you for your review.</label><br><br>
+        <label>Click below to weite new review.</label><br><br>
+        <button @click="reviewAgain()">Review Again</button>
+    </form>
 </template>
 
 <script>
+//used to post form data to my back-end server.
 import axios from 'axios';
 
 export default {
@@ -122,12 +128,17 @@ export default {
                     .catch((error) => {
                         alert(`Error ${error}`);
                     }).finally(() => {
-                        alert("Your review has successfully sent to my dataset.");
+                        console.log("Success!");
                     });
+                this.done = true;
                 e.target.reset();
                 return;
             }
             console.log("fail");
+        },
+
+        reviewAgain() {
+            this.done = false;
         }
     },
 }
