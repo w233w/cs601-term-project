@@ -1,6 +1,9 @@
 # cs601-term-project
 * deprecated version: https://github.com/w233w/MET-CS601-Term-Project
 
+## Author
+[Yang Ye](https://github.com/w233w)
+
 ## Back-end spring-boot server & database
 https://github.com/w233w/spring-boot-backend-for-project
 
