@@ -4,6 +4,9 @@
 ## Author
 [Yang Ye](https://github.com/w233w)
 
+## Deployed Git Pages
+At: https://w233w.github.io/cs601-term-project/
+
 ## Back-end spring-boot server & database
 https://github.com/w233w/spring-boot-backend-for-project
 
@@ -21,6 +24,3 @@ https://github.com/w233w/spring-boot-backend-for-project
 ```console
 sh updatePage.sh
 ```
-
-## Check depolyed webpage
-At: https://w233w.github.io/cs601-term-project/
