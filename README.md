@@ -7,9 +7,14 @@
 ## Back-end spring-boot server & database
 https://github.com/w233w/spring-boot-backend-for-project
 
-## To start serve locally
+## To start serve at localhost: 8080
 ```console
-npm run serve
+ npm run serve
+```
+
+## To start serve at localhost on diferent port
+```console
+ npm run serve -- -- port 8081
 ```
 
 ## To update github pages
