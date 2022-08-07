@@ -18,7 +18,7 @@ https://github.com/w233w/spring-boot-backend-for-project
 ```console
  npm run serve
 ```
-if port 8080 is used, try:
+if port 8080 is used, try (replace PORT_NUMBER with a number like 8081, 8082 ...):
 ```console
  npm run serve -- -- port PORT_NUMBER
 ```
