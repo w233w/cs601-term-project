@@ -5,7 +5,6 @@ import Gamelife from '@/components/Gamelife.vue'
 import Survey from '@/components/Survey.vue'
 import Gallary from '@/components/Gallary.vue'
 import Resume from '@/components/Resume.vue'
-import Showcase from '@/components/Showcase.vue'
 
 const routes = [
   {
@@ -42,11 +41,6 @@ const routes = [
     path: "/Resume",
     name: "resume",
     component: Resume,
-  },
-  {
-    path: "/Showcase",
-    name: "showcase",
-    component: Showcase,
   },
 ];
 

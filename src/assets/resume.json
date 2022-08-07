@@ -72,10 +72,10 @@
                 "description": "",
                 "sub_description": "",
                 "detail": [
-                    "Having over 5 years of study abroad experience; fluenting in written and verbal English communication.",
+                    "Having over 5 years of study abroad experience; fluently in written and verbal English communication.",
                     "Has rich experience in agile development mode, working with three agile development teams over 18 months. Have a good understanding of the product life cycle.",
-                    "Capeable in using common production tools such as GitHub, Microsoft Office and so on.",
-                    "Has done a lot of date science research by using the Python libraries such as NumPy, Pandas and Matplotlib. Complete over 10 projects individually and with a team. Familiar with date processing.",
+                    "Capable of using common production tools such as GitHub, Microsoft Office, and so on.",
+                    "Has done a lot of data science research by using the Python libraries such as NumPy, Pandas, and Matplotlib. Complete over 10 projects individually and with a team. Familiar with data processing.",
                     "During the process of the project, I can communicate with team members in a timely and effective way, and work together to complete tasks with high quality and efficiency."
                 ]
             }
@@ -92,7 +92,7 @@
                 "description": "Next-Step HealthTech",
                 "sub_description": "",
                 "detail": [
-                    "Automated sentiment analysis of company’s social media content using Natural language processing.",
+                    "Automated sentiment analysis of the company\u2019s social media content using Natural language processing.",
                     "Use Python to scrape the Tweet using their official API to train the NLP model."
                 ]
             },
@@ -102,7 +102,7 @@
                 "description": "China Construction Bank, Zhejiang Branch, Fintech Department",
                 "sub_description": "",
                 "detail": [
-                    "Using Spring Fox, retrieve date from the back-end datebase, paginated, and displayed."
+                    "Using Spring Fox, retrieve the date from the back-end database, paginate, and displayed."
                 ]
             },
             {
@@ -113,7 +113,7 @@
                 "detail": [
                     "Participated in several Android applications, mainly responsible for user interface and user date.",
                     "Tank Battalion (Game): Realize several functions including allowing players to modify their tank, display the configuration and apply it in the game, etc., and also develop the user interface.",
-                    "Health APP: Encrypt user date and store only the ciphertext into the datebase, participate in the development of user interfaces. Also, I’m responsible for project progress and update documentation."
+                    "Health APP: Encrypt user data and store only the ciphertext into the database, participating in the development of user interfaces. Also, I’m responsible for project progress and updating documentation."
                 ]
             }
         ]
@@ -129,7 +129,7 @@
                 "description": "",
                 "sub_description": "",
                 "detail": [
-                    "Developed a self-confidence, optimism, humor and positive attitude towards life."
+                    "Developed self-confidence, optimism, humor, and a positive attitude toward life."
                 ]
             }
         ]
@@ -146,7 +146,7 @@
                 "sub_description": "",
                 "detail": [
                     "Have a solid code foundation and strict code style. The produce is both legible and reliable.",
-                    "Always have passion for work. Have strong self-learning ability, and will take the initiative o learn when encountering something new."
+                    "Always have a passion for work. Have strong self-learning ability, and will take the initiative o to learn when encountering something new."
                 ]
             }
         ]

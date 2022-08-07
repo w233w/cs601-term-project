@@ -23,19 +23,17 @@
 			</tr>
 		</table>
 		<p>
-			&emsp;Hangzhou is the provincial capital of Zhejiang Province.
-			Zhejiang is located at the east of China and close to the East China Sea, the monsoon climate is humid and
-			rainy.
-			So as Hangzhou, the weather become hot and rainy in summer, and little rain in winter.
-			I remember once the temperature was even raised to 40 C. 
+			&emsp;Hangzhou is the provincial capital of Zhejiang Province. 
+			Zhejiang is located in the east of China and close to the East China Sea, the monsoon climate is humid and rainy. 
+			So in Hangzhou, the weather becomes hot and rainy in summer, and little rain in winter. 
+			I remember once the temperature was even raised to 40 C.
 		</p>
 		<p>
-			&emsp;The most interesting thing about Hangzhou is that the city is built on the edge of a huge lake.
+			&emsp;The most interesting thing about Hangzhou is that the city is built on the edge of a huge lake. 
 			You can see how big this lake is from the satellite image.
 		</p>
 		<p>
-			&emsp;The lower right corner of the satellite image is the Qiantang River running through Zhejiang which is
-			also a giant body of water.
+			&emsp;The lower right corner of the satellite image is the Qiantang River running through Zhejiang which is also a giant body of water.
 		</p>
 		<figure class="in-text">
 			<img src="../assets/hangzhou.png" alt="hangzhou">

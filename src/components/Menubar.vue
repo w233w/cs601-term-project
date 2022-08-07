@@ -6,19 +6,19 @@
                 <router-link to="./Introduction">Introduction</router-link>
             </li>
             <li>
-                <router-link to="./Hometown">Hometown</router-link>
+                <router-link to="./Hometown" ref="./Hometown">Hometown</router-link>
             </li>
             <li>
-                <router-link to="./Gamelife">My Gamelife</router-link>
+                <router-link to="./Gamelife" ref="./Gamelife">My Gamelife</router-link>
             </li>
             <li>
-                <router-link to="./Resume">Resume</router-link>
+                <router-link to="./Resume" ref="./Resume">Resume</router-link>
             </li>
             <li>
-                <router-link to="./Gallary">Gallary</router-link>
+                <router-link to="./Gallary" ref="./Gallary">Gallary</router-link>
             </li>
             <li>
-                <router-link to="./Survey">Survey</router-link>
+                <router-link to="./Survey" ref="./Survey">Survey</router-link>
             </li>
         </ul>
     </nav>
@@ -29,3 +29,10 @@ export default {
     name: 'Menu-bar'
 }
 </script>
+
+<style scoped>
+nav a.router-link-exact-active {
+    color: brown;
+    background-color: #EFEF94;
+}
+</style>
