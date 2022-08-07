@@ -153,13 +153,18 @@ textarea {
     margin: 8px 8px;
 }
 
+textarea {
+    max-width: 95%;
+}
+
 #survey {
     margin: 32px auto;
     padding: 32px 24px;
     border-radius: 8px;
     box-shadow: 0 4px 20px lightgray;
     text-align: center;
-    background-color: #E0E094
+    background-color: #E0E094;
+    width: 55vh;
 }
 
 .question {

@@ -25,21 +25,6 @@ export default {
 		width: 100%;
 	}
 
-	.nav-header {
-		float: left;
-		margin: 4px 16px;
-		text-align: center;
-		font-family: "Arial Black", Helvetica, sans-serif;
-	}
-
-	.nav-ul li {
-		float: left;
-	}
-
-	.nav-ul a {
-		padding: 12px 12px;
-	}
-
 	/*Avoid conflict with menu*/
 	main {
 		padding-top: 32px;
@@ -59,15 +44,6 @@ export default {
 	header {
 		height: 100%;
 		width: 150px;
-	}
-
-	.nav-header {
-		text-align: center;
-		font-family: "Arial Black", Helvetica, sans-serif;
-	}
-
-	.nav-ul a {
-		padding: 16px 12px;
 	}
 
 	/*Avoid conflict with menu*/
@@ -117,40 +93,6 @@ figure.in-text img {
 	margin-right: auto;
 }
 
-.info-table {
-	border: 1px solid black;
-	background-image: url("./assets/table_background.jpg");
-}
-
-.info-table th td {
-	border: 1px solid black;
-	padding: 3px 15px;
-}
-
-.nav-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	background-color: #E0E094;
-}
-
-.nav-ul li {
-	text-align: center;
-}
-
-.nav-ul a {
-	color: #000000;
-	text-decoration: none;
-	display: block;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-}
-
-.nav-ul a:hover {
-	background-color: #EFEF94;
-	color: #CC33CC;
-}
-
 .extra-links {
 	padding-left: 20px;
 	margin-top: -10px;
@@ -158,10 +100,5 @@ figure.in-text img {
 
 .extra-links a {
 	text-decoration: none;
-}
-
-#intro-video {
-	margin-left: 20px;
-	margin-top: -20px;
 }
 </style>

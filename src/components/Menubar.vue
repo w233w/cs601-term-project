@@ -31,6 +31,59 @@ export default {
 </script>
 
 <style scoped>
+/*Tablet Size*/
+@media only screen and (min-width:1000px) {
+	.nav-header {
+		float: left;
+		margin: 4px 16px;
+		text-align: center;
+		font-family: "Arial Black", Helvetica, sans-serif;
+	}
+
+	.nav-ul li {
+		float: left;
+	}
+
+	.nav-ul a {
+		padding: 12px 12px;
+	}
+}
+
+/*PC Screen Size*/
+@media only screen and (max-width: 1000px) {
+	.nav-header {
+		text-align: center;
+		font-family: "Arial Black", Helvetica, sans-serif;
+	}
+
+	.nav-ul a {
+		padding: 16px 12px;
+	}
+}
+
+.nav-ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #E0E094;
+}
+
+.nav-ul li {
+	text-align: center;
+}
+
+.nav-ul a {
+	color: #000000;
+	text-decoration: none;
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.nav-ul a:hover {
+	background-color: #EFEF94;
+	color: #CC33CC;
+}
 nav a.router-link-exact-active {
     color: brown;
     background-color: #EFEF94;

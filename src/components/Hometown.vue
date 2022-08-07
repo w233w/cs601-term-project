@@ -59,3 +59,15 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+.info-table {
+	border: 1px solid black;
+	background-image: url("../assets/table_background.jpg");
+}
+
+.info-table th,  td{
+	border: 1px solid black;
+	padding: 3px 15px;
+}
+</style>
