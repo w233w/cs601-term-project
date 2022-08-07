@@ -27,7 +27,7 @@ if port 8080 is used, try:
 ```
 
 ## To on-click update github pages
-> I believe you have to log in my git account to do git push.
+> I believe you have to log in my git account to run this script.
 ```console
 sh updatePage.sh
 ```
