@@ -57,18 +57,18 @@ Springboot is used as Backend server application recieve POST request. It also c
 
 Shell scripting is used to on-click update github pages.
 
-## Quick inspect of code by grading rubric
+## Inspect of code by grading rubric
 Nothing to say about Design/Layout/Text. They are just visual things.
 
-For navigation. I believe my menu bar is clean and clear to use. Menu bar will also highlight the current router to let you know where you are (by setting 'a.router-link-exact-active')
+For navigation. I believe my menu bar is clean and clear to use. [Menubar](https://github.com/w233w/cs601-term-project/blob/master/src/components/Menubar.vue) will also highlight the current router to let you know where you are (by setting 'a.router-link-exact-active')
 
-For images. both image has alter, width, height. The image in gallary has border as halos. There are no large image file so no thumbnail needed.
+For images. both image has alter, width, height. The image in [gallary](https://github.com/w233w/cs601-term-project/blob/master/src/components/ImageGallary.vue) has border as halos. There are no large image file so no thumbnail needed.
 
 For machanics, everything working fine on chrome, firefox and edge.
 
 For HTML, CSS, Javascript, Vue, DOM. Nothing special here. I used a lots of different HTML tags, different CSS selector, Custom VUE compoments by access DOM.
 
-Validation is applied on form, only people follow the rule they can submit the form. However my website can run with Javascript disabled since the whole project is built by Vue.
+Validation is applied on [form](https://github.com/w233w/cs601-term-project/blob/master/src/components/Myform.vue), only people follow the rule they can submit the form. However my website can run with Javascript disabled since the whole project is built by Vue.
 
 Extra credit: I deploy the data base and back-end application on Microsoft Azure. For more detail, please check back-end git repo, you can find link above.
 
