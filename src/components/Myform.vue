@@ -128,9 +128,9 @@ export default {
                     .catch((error) => {
                         alert(`Error ${error}`);
                     }).finally(() => {
+                        this.done = true;
                         console.log("Success!");
                     });
-                this.done = true;
                 e.target.reset();
                 return;
             }

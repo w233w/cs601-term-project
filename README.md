@@ -16,6 +16,10 @@ https://github.com/w233w/spring-boot-backend-for-project
 ```console
  npm run serve
 ```
+if port 8080 is used, try:
+```console
+ npm run serve -- -- port PORT_NUMBER
+```
 
 ## To just build project
 ```console
