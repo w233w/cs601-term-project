@@ -12,6 +12,8 @@ https://w233w.github.io/cs601-term-project/
 https://github.com/w233w/spring-boot-backend-for-project
 > Deployed on Microsoft Azure, check more detail on README.md
 
+# Geting start
+
 ## To start serve at localhost: 8080
 ```console
  npm run serve
