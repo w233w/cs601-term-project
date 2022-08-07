@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-/*Tablet Size*/
+/*PC Screen Size*/
 @media only screen and (min-width:1000px) {
 	.nav-header {
 		float: left;
@@ -49,7 +49,7 @@ export default {
 	}
 }
 
-/*PC Screen Size*/
+/*Tablet Size*/
 @media only screen and (max-width: 1000px) {
 	.nav-header {
 		text-align: center;

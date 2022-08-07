@@ -13,11 +13,17 @@
                     <td class="right" id="sub_description">{{ data.sub_description }}</td>
                 </tr>
             </table>
-            <div id="detail" v-for="row in data.detail" v-bind:key="row.length">
-                <ul id="detailList">
+            <div v-if="data.detail_layout == hori">
+                <ul v-for="row in data.detail" v-bind:key="row.length" id="hori">
                     <li>{{ row }}</li>
                 </ul>
             </div>
+            <div v-if="data.detail_layout != hori">
+                <ul v-for="row in data.detail" v-bind:key="row.length" if="norm">
+                    <li>{{ row }}</li>
+                </ul>
+            </div>
+            <div style="clear:both;"></div>
         </div>
     </section>
 </template>
@@ -34,7 +40,6 @@ export default {
         // has breakline or not
         breakline: {
             type: Boolean,
-            required: true,
             default() {
                 return true
             }
@@ -47,17 +52,21 @@ export default {
     data() {
         return {
             breaklineWidth: "100%",
+            hori: "horizontal"
         }
     },
     computed: {
         breakLine() {
             return this.breakline ? "1px solid #444" : "";
+        },
+        vert() {
+            return this.layout == "horizontal";
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
 #resumeSection {
     font-family: "Times New Roman", Times, serif;
 }
@@ -73,10 +82,15 @@ export default {
 
 #description {
     font-style: oblique;
+    font-size: 18px;
+}
+
+#hori {
+    float: left;
 }
 
 .breakline {
-    margin-top: -10px;
+    margin-top: -20px;
 }
 
 .left {
@@ -87,4 +101,7 @@ export default {
     text-align: right;
 }
 
+li {
+    margin: -8px 12px -8px -12px;
+}
 </style>

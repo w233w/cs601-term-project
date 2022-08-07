@@ -2,13 +2,13 @@
     "education": {
         "title": "EDUCATION",
         "breakline": true,
-        "layout": "",
         "content": [
             {
                 "subtitle": "Boston University, Boston, MA",
                 "date": "Sep 2021 - Aug 2022",
                 "description": "Master of computer science",
                 "sub_description": "GPA: 3.8",
+                "detail_layout": "",
                 "detail": []
             },
             {
@@ -16,6 +16,7 @@
                 "date": "Sep 2016 - Jun 2021",
                 "description": "Bachelor of computer science",
                 "sub_description": "GPA: 3.0",
+                "detail_layout": "",
                 "detail": []
             }
         ]
@@ -23,13 +24,13 @@
     "major_coursework": {
         "title": "MAJOR COURSEWORK",
         "breakline": true,
-        "layout": "two_row",
         "content": [
             {
                 "subtitle": "",
                 "date": "",
                 "description": "",
                 "sub_description": "",
+                "detail_layout": "",
                 "detail": [
                     "Advanced Programming Technology",
                     "Computer Language Theory",
@@ -44,13 +45,13 @@
     "programming_language": {
         "title": "PROGRAMMING LANGUAGE",
         "breakline": true,
-        "layout": "horizontal",
         "content": [
             {
                 "subtitle": "",
                 "date": "",
                 "description": "",
                 "sub_description": "",
+                "detail_layout": "horizontal",
                 "detail": [
                     "C/C++",
                     "Python3",
@@ -71,6 +72,7 @@
                 "date": "",
                 "description": "",
                 "sub_description": "",
+                "detail_layout": "",
                 "detail": [
                     "Having over 5 years of study abroad experience; fluently in written and verbal English communication.",
                     "Has rich experience in agile development mode, working with three agile development teams over 18 months. Have a good understanding of the product life cycle.",
@@ -91,6 +93,7 @@
                 "date": "Sep 2020 - Jun 2021",
                 "description": "Next-Step HealthTech",
                 "sub_description": "",
+                "detail_layout": "",
                 "detail": [
                     "Automated sentiment analysis of the company\u2019s social media content using Natural language processing.",
                     "Use Python to scrape the Tweet using their official API to train the NLP model."
@@ -101,6 +104,7 @@
                 "date": "Jun 2020 - Jul 2020",
                 "description": "China Construction Bank, Zhejiang Branch, Fintech Department",
                 "sub_description": "",
+                "detail_layout": "",
                 "detail": [
                     "Using Spring Fox, retrieve the date from the back-end database, paginate, and displayed."
                 ]
@@ -110,6 +114,7 @@
                 "date": "During School Time",
                 "description": "",
                 "sub_description": "",
+                "detail_layout": "",
                 "detail": [
                     "Participated in several Android applications, mainly responsible for user interface and user date.",
                     "Tank Battalion (Game): Realize several functions including allowing players to modify their tank, display the configuration and apply it in the game, etc., and also develop the user interface.",
@@ -128,6 +133,7 @@
                 "date": "2016-2018",
                 "description": "",
                 "sub_description": "",
+                "detail_layout": "",
                 "detail": [
                     "Developed self-confidence, optimism, humor, and a positive attitude toward life."
                 ]
@@ -144,6 +150,7 @@
                 "date": "",
                 "description": "",
                 "sub_description": "",
+                "detail_layout": "",
                 "detail": [
                     "Have a solid code foundation and strict code style. The produce is both legible and reliable.",
                     "Always have a passion for work. Have strong self-learning ability, and will take the initiative o to learn when encountering something new."

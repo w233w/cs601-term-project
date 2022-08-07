@@ -21,9 +21,29 @@ export default {
     },
     data() {
         return {
-            title1: "ABILITY",
             resumeData: resumejson
         }
     }
 }
 </script>
+
+<style scoped>
+/*PC Screen Size*/
+@media only screen and (min-width:1000px) {
+	/*Avoid conflict with menu*/
+	main {
+		margin-top: 16px;
+        margin-bottom: 60px;
+	}
+}
+
+/*Tablet Size*/
+@media only screen and (max-width: 1000px) {
+
+	/*Vertical menu when using large screen*/
+	main {
+        margin-left: 10px;
+        margin-bottom: 60px;
+	}
+}
+</style>

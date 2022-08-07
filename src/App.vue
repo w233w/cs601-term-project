@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style>
-/*Tablet Size*/
+/*PC Screen Size*/
 @media only screen and (min-width:1000px) {
 
 	/*Menu gose to top when screen become smaller*/
@@ -37,7 +37,7 @@ export default {
 	}
 }
 
-/*PC Screen Size*/
+/*Tablet Size*/
 @media only screen and (max-width: 1000px) {
 
 	/*Vertical menu when using large screen*/
