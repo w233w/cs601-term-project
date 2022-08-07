@@ -31,7 +31,7 @@ if port 8080 is used, try (replace PORT_NUMBER with a number like 8081, 8082 ...
 ## To one-click update Github pages
 > I believe you have to log in to my git account to run this script.
 ```console
-sh updatePage.sh
+#sh updatePage.sh
 ```
 
 # Project details
