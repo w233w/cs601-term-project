@@ -58,6 +58,6 @@ Springboot is used as Backend server application recieve POST request. It also c
 Shell scripting is used to on-click update github pages.
 
 # Deprecated version
-> Personal archive purpose, don't grade it. Just ignore it.
+> Personal archive purpose, don't grade it. It is not a part of term project.
 
 https://github.com/w233w/MET-CS601-Term-Project
